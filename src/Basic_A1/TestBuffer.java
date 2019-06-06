@@ -1,4 +1,4 @@
-package Basic_A0;
+package Basic_A1;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -8,7 +8,7 @@ public class TestBuffer {
     public static void main(String args[]) throws IOException
     {
         // attach the file to FileInputStream
-        FileInputStream fin = new FileInputStream("file1.txt");
+        FileInputStream fin = new FileInputStream("/home/judith/IdeaProjects/W5Day04_Java_IO/src/Basic_A1/file1.txt");
 
         BufferedInputStream bin = new BufferedInputStream(fin);
 
@@ -25,7 +25,7 @@ public class TestBuffer {
         /*Original File content:
          * This is my first line
          * This is my second line*/
-        bin.skip(4);
+        bin.skip(10);
         System.out.println("FileContents :");
 
         // read characters from FileInputStream and
@@ -33,11 +33,12 @@ public class TestBuffer {
         int ch;
         while ((ch=bin.read()) != -1)
             System.out.print((char)ch);
-
+        System.out.println("----------");
         // illustrating reset() method
         bin.reset();
         while ((ch=bin.read()) != -1)
-            System.out.print((char)ch);
+           System.out.print((char)ch);
+
 
         // close the file
         fin.close();
